@@ -1,0 +1,102 @@
+class usuarios:
+	def __init__(self, nombreU, apellidoU, cedulaU, num1, num2):
+		self.nombre=numbreU
+		self.apellido=apellidoU
+		self.numero1=num1
+		self.numero2=num2
+
+lista= list()
+print("ingrese su nombre")
+nombreU= input()
+print("ingrese su apellido")
+apellidoU= input()
+print("ingrese su cedula")
+cedulaU= input()
+usuario = nombreU + "," + apellidoU + "," + cedulaU
+
+archivo=open("Registro.txt","a")
+mensaje=archivo.write(usuario)
+archivo.close()
+
+def Menu():
+	print("1. Registrar")
+	print("2. Iniciar")
+	print("3. Calculadora")
+while True:
+	Menu()
+	opc=input("ingresa una opcion")
+	if opc=="1": 
+	    Nombre_U = open("Nombre_U.txt", "a")
+	    nombreu = input("\nIntroduzca un nombre de usuario")
+	    Nombre_U.write(nombreu+'\n')
+	    Nombre_U.close()
+	    contraI = open("contraI.txt", "a")
+	    contraseña = input("Ingrese una clave")
+	    contraI.write(contraseña+'\n')
+	    contraI.close()
+	    
+	if opc=="2":
+	    nombreu = input("\nEscriba su nombre de usuario")
+	    Nombre_U = open("Nombre_U.txt", "r")
+	    buscar = Nombre_U.readlines()
+	    if nombreu+'\n' in buscar:
+	        contraseña = input("Escriba su clave")
+	        contraI = open("contraI.txt","r")
+	        buscar = contraI.readlines()
+	        if contraseña+"\n" in buscar:
+	            print("\nEXITO")
+	        else:
+	        	print("HUBO PROBLEMAS AL INICIAR SESION")
+	    else:
+	    	print("INTENTELO NUEVAMENTE")        
+	if opc=="3":
+		break
+
+def calculadora():
+
+	print("CALCULADORA")
+	print("1. Sumar")
+	print("2. Restar")
+	print("3. Multiplicar")
+	print("4. Dividir")
+	print("5. Salir")
+
+while True:
+	calculadora()
+	opcion=input("inserta un numero")
+
+	if opcion=="1":
+		print("ingrese un numero para la SUMA")
+		num1= int(input())
+		print("ingrese otro numero")
+		num2=int(input())
+		print("el resultado es")
+		print(num1+num2) 
+
+	elif opcion=="2":
+		print("ingrese un numero para la RESTA")
+		num1= int(input())
+		print("ingrese otro numero")
+		num2= int(input())
+		print("el resultado es")
+		print(num1-num2)
+
+	elif opcion=="3":
+		print("ingrese un numero para la MULTIPLICACION")
+		num1= int(input())
+		print("ingrese otro numero")
+		num2= int(input())
+		print("el resultado es")
+		print(num1*num2)
+
+	elif opcion=="4":
+		print("ingrese un numero para la DIVISION")
+		num1= int(input())
+		print("ingrese otro numero")
+		num2= int(input())
+		print("el resultado es")
+		print(num1/num2)
+	elif opcion=="5":
+		break
+	else:
+		print("Elija una opcion valida")
